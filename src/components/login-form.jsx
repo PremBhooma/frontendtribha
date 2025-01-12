@@ -38,7 +38,7 @@ export function LoginForm() {
               </div>
               <div className="text-center text-sm text-white">
                 Don&apos;t have an account?{" "}
-                <Link href="#" className="underline underline-offset-4">
+                <Link href="/register" className="underline underline-offset-4">
                   Sign up
                 </Link>
               </div>
