@@ -44,7 +44,6 @@ export function LoginForm() {
 
     try {
       const response = await axios.post(`${BASEURL}api/user/login`, formData);
-      console.log("User logged in successfully:", response.data);
       localStorage.setItem("user", JSON.stringify(response?.data?.data));
       setUser(response?.data?.data);
       router.push("/");
