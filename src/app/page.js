@@ -15,26 +15,26 @@ export default function Home() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   // Simulate token retrieval from localStorage
-  //   const isLogin = localStorage.getItem("isLogin") === "true";
-  //   const tokenExists = user?.token || isLogin;
+  useEffect(() => {
+    // Simulate token retrieval from localStorage
+    const isLogin = localStorage.getItem("isLogin") === "true";
+    const tokenExists = user?.token || isLogin;
 
-  //   if (!tokenExists) {
-  //     router.push("/login");
-  //   } else {
-  //     setLoading(false); // Only render content if token exists
-  //   }
-  // }, [user, router]);
+    if (!tokenExists) {
+      router.push("/login");
+    } else {
+      setLoading(false); // Only render content if token exists
+    }
+  }, [user, router]);
 
-  // if (loading) {
-  //   // Render a loading screen while determining user authentication
-  //   return (
-  //     <div className="flex items-center justify-center h-screen">
-  //       <h1 className="text-2xl font-bold">Loading...</h1>
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    // Render a loading screen while determining user authentication
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <h1 className="text-2xl font-bold">Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <SidebarNav>

@@ -68,7 +68,7 @@ export default function Caricatures() {
           <img src={data.image} alt={data.name || "3D Caricatures"} className="w-full h-auto md:h-72 object-cover md:object-contain rounded-xl" />
         </div>
 
-        <div className="p-3 sm:p-6 lg:p-3 xl:p-6 lg:w-[55%] 2xl:w-[30%] w-full">
+        <div className="p-3 sm:p-6 lg:p-3 xl:p-6 lg:w-[55%]  w-full">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">{data.name || "3D Caricatures"}</h2>
           <p className="text-sm lg:text-xs xl:text-sm text-gray-600 mb-4">Product ID: {data.productId || "N/A"}</p>
 

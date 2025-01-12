@@ -11,6 +11,8 @@ export function useUserContext() {
 export default function UserProvider({ children }) {
   const [user, setUser] = useState(null);
 
+  console.log("USER_IN_CONTEXT:", user);
+
   useEffect(() => {
     const storedAdmin = JSON.parse(localStorage.getItem("user"));
     if (storedAdmin) {
