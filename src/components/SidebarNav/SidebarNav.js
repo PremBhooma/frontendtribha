@@ -3,7 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, ChartSpline, Heart, SquarePlus, Wallet } from "lucide-react";
-import { Sidebar, SidebarContent, SidebarHeader, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarProvider } from "@/components/ui/sidebar";
+import { Sidebar, SidebarContent, SidebarHeader, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -85,7 +85,7 @@ export default function SidebarNav({ children }) {
             </SidebarGroup>
           </SidebarContent>
         </Sidebar>
-        <div>{children}</div>
+        <SidebarInset>{children}</SidebarInset>
       </SidebarProvider>
     </>
   );
