@@ -45,7 +45,7 @@ export default function Home() {
               <div>
                 <h1 className=" text-2xl font-bold text-[#333] m-0">Dashboard</h1>
                 <p className="text-sm lg:text-base text-[#666]">
-                  Hello <span>{user?.name || "Nila Vita"}</span>, Welcome Back
+                  Hello <span className="capitalize">{user?.name || "Nila Vita"}</span>, Welcome Back
                 </p>
               </div>
             </div>

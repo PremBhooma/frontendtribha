@@ -4,7 +4,7 @@ import { useUserContext } from "@/context/userContext";
 import { Settings, Bell, Wallet, Lock, ChevronRight } from "lucide-react";
 
 export default function UserDetails() {
-  // const { user } = useUserContext();
+  const { user } = useUserContext();
 
   const historyItems = [
     {
@@ -60,7 +60,7 @@ export default function UserDetails() {
 
         <div className="flex items-center gap-2">
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-gray-900">Nella Vita</span>
+            <span className="text-sm font-medium text-gray-900 capitalize">{user?.name || "Nella Vita"}</span>
             <span className="text-xs text-gray-500">User</span>
           </div>
           <div className="h-8 w-8 rounded-full bg-gray-300 overflow-hidden">
