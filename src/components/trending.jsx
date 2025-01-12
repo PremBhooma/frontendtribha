@@ -102,7 +102,7 @@ export default function Trending() {
                 </div>
                 <div className="mt-2 flex justify-between">
                   <button className="px-4 py-1 text-gray-700 hover:bg-gray-200 transition text-sm rounded-2xl border border-gray-300">Details</button>
-                  <button className="px-4 py-1 bg-indigo-600 text-white text-sm rounded-2xl hover:bg-blue-600 transition">Place a Bid</button>
+                  <button className="px-4 py-1 bg-[#6f4fee] text-white text-sm rounded-2xl hover:bg-blue-600 transition">Place a Bid</button>
                 </div>
               </div>
             </div>
