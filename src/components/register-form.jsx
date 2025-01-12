@@ -1,13 +1,13 @@
-import { useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { BASEURL } from "@/configs/constants";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Link from "next/link";
-import { BASEURL } from "@/configs/constants";
-import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function RegisterForm() {
   const router = useRouter();
@@ -20,15 +20,19 @@ export function RegisterForm() {
   const [error, setError] = useState("");
 
   const validateForm = () => {
-    const { email, password } = formData;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Restrict to Gmail addresses
+    const { email, password, number } = formData;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    const numberRegex = /^\d{10}$/;
 
     if (!emailRegex.test(email)) {
       return "Email must be a valid Gmail address (e.g., example@gmail.com).";
     }
     if (!passwordRegex.test(password)) {
       return "Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 6 characters long.";
+    }
+    if (!numberRegex.test(number)) {
+      return "Phone number must be exactly 10 digits.";
     }
     return null;
   };
@@ -55,7 +59,6 @@ export function RegisterForm() {
 
       router.push("/login");
     } catch (err) {
-      console.error("Error registering user:", err.response?.data || err.message);
       setError(err.response?.data?.message || "An error occurred. Please try again.");
     }
   };
