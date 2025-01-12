@@ -48,7 +48,7 @@ export default function SidebarNav({ children }) {
                 <SidebarMenuButton size="lg" asChild className="h-14">
                   <Link href="/" className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
                     <div>
-                      <Image src="/images/logo.jpg" width={170} height={100} alt="logo" />
+                      <Image src="/images/logo.jpg" width={170} height={100} className="w-[170px] lg:w-[145px] xl:w-[170px] h-[60px] lg:h-[49px] xl:h-[60px]" alt="logo" />
                     </div>
                   </Link>
                 </SidebarMenuButton>
@@ -56,7 +56,7 @@ export default function SidebarNav({ children }) {
             </SidebarMenu>
           </SidebarHeader>
           <SidebarContent>
-            <SidebarGroup className="p-5">
+            <SidebarGroup className="p-5 lg:p-3 xl:p-5">
               <SidebarGroupContent>
                 <SidebarMenu>
                   {items.map((item) => (

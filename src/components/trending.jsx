@@ -56,7 +56,7 @@ export default function Trending() {
       </div>
 
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Skeleton className="w-full h-48" />
@@ -71,20 +71,20 @@ export default function Trending() {
       ) : error ? (
         <p style={{ color: "red" }}>{error}</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {data.map((item) => (
             <div key={item._id} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="relative">
-                <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
+                <img src={item.image} alt={item.name} className="w-full h-60 md:h-48 object-cover" />
                 <div className="absolute inset-0 flex items-end justify-center bg-black bg-opacity-40 pb-5">
                   <div className="flex gap-8 bg-white bg-opacity-60 text-white px-4 py-2 rounded-lg">
                     <div className="text-center">
-                      <p className="text-[12px] font-medium">Current Bid</p>
-                      <p className="text-[15px] font-bold">{item.currentBid}</p>
+                      <p className="text-[11px] xl:text-[12px] font-medium">Current Bid</p>
+                      <p className="text-[13px] xl:text-[15px] font-bold">{item.currentBid}</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-[12px] font-medium">Auction Time</p>
-                      <p className="text-[15px] font-bold">{item.auctionTime}</p>
+                      <p className="text-[11px] xl:text-[12px] font-medium">Auction Time</p>
+                      <p className="text-[13px] xl:text-[15px] font-bold">{item.auctionTime}</p>
                     </div>
                   </div>
                 </div>
