@@ -98,7 +98,7 @@ export default function Trending() {
                 </div>
                 <div className="flex items-center gap-2 mt-1">
                   <img src={item.author.authorProfilePic} alt={item.author.authorName} className="w-6 h-6 rounded-full" />
-                  <p className="text-sm text-gray-500">{item.author.authorName}</p>
+                  <p className="text-sm text-gray-400">{item.author.authorName}</p>
                 </div>
                 <div className="mt-2 flex justify-between">
                   <button className="px-4 py-1 text-gray-700 hover:bg-gray-200 transition text-sm rounded-2xl border border-gray-300">Details</button>

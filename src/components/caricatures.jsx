@@ -70,13 +70,13 @@ export default function Caricatures() {
 
         <div className="p-3 sm:p-6 lg:p-3 xl:p-6 lg:w-[55%]  w-full">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">{data.name || "3D Caricatures"}</h2>
-          <p className="text-sm lg:text-xs xl:text-sm text-gray-600 mb-4">Product ID: {data.productId}</p>
+          <p className="text-sm lg:text-xs xl:text-sm text-gray-400 mb-4">Product ID: {data.productId}</p>
 
           <div className="flex items-center mb-4">
             <img src={data.author?.authorProfilePic || "https://via.placeholder.com/40"} alt={data.author?.authorName || "Author"} className="w-10 h-10 rounded-full mr-3" />
             <div>
               <p className="font-semibold text-gray-800">{data.author?.authorName}</p>
-              <p className="text-sm lg:text-xs xl:text-sm text-gray-600">{data.author?.authorEmail}</p>
+              <p className="text-sm lg:text-xs xl:text-sm text-gray-400">{data.author?.authorEmail}</p>
             </div>
           </div>
 
