@@ -45,7 +45,6 @@ export function RegisterForm() {
 
     try {
       const response = await axios.post(`${BASEURL}api/user/create`, formData);
-      console.log("User registered successfully:", response.data);
 
       setFormData({
         name: "",
