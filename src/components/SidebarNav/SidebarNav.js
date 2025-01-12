@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import { Calendar, ChartSpline, Heart, Home, Inbox, LayoutDashboard, Search, Settings, SquarePlus, Wallet } from "lucide-react";
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarProvider } from "@/components/ui/sidebar";
+import { usePathname } from "next/navigation";
+import { LayoutDashboard, ChartSpline, Heart, SquarePlus, Wallet } from "lucide-react";
+import { Sidebar, SidebarContent, SidebarHeader, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarProvider } from "@/components/ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
 
-// Menu items.
 const items = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/",
     icon: LayoutDashboard,
   },
   {
@@ -36,6 +36,8 @@ const items = [
 ];
 
 export default function SidebarNav({ children }) {
+  const pathname = usePathname();
+
   return (
     <>
       <SidebarProvider>
@@ -54,16 +56,27 @@ export default function SidebarNav({ children }) {
             </SidebarMenu>
           </SidebarHeader>
           <SidebarContent>
-            <SidebarGroup>
+            <SidebarGroup className="p-5">
               <SidebarGroupContent>
                 <SidebarMenu>
                   {items.map((item) => (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton asChild>
-                        <a href={item.url}>
-                          <item.icon />
-                          <span>{item.title}</span>
-                        </a>
+                        <Link href={item.url} className={`flex items-center space-x-2 p-5 rounded-2xl ${pathname === item.url ? "bg-purple-100 font-bold" : "text-gray-600 hover:text-purple-700"}`} style={pathname === item.url ? { color: "#6f4ff1" } : {}}>
+                          <item.icon
+                            className="w-5 h-5"
+                            style={{
+                              color: pathname === item.url ? "#6f4ff1" : "#9CA3AF",
+                            }}
+                          />
+                          <span
+                            style={{
+                              color: pathname === item.url ? "#6f4ff1" : "#9CA3AF",
+                            }}
+                          >
+                            {item.title}
+                          </span>
+                        </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   ))}
@@ -72,7 +85,7 @@ export default function SidebarNav({ children }) {
             </SidebarGroup>
           </SidebarContent>
         </Sidebar>
-        <SidebarInset>{children}</SidebarInset>
+        <div>{children}</div>
       </SidebarProvider>
     </>
   );
