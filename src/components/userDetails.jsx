@@ -72,14 +72,12 @@ export default function UserDetails() {
       <div className="mt-5 rounded-2xl bg-white">
         <div className="bg-[#d0e5f7] p-6 rounded-2xl">
           <p className="text-gray-500 text-sm font-medium text-center">Your Total Earnings</p>
-          <h2 className="text-4xl md:text-3xl xl:text-4xl font-bold text-center text-purple-600 mt-2">$4,587.58</h2>
+          <h2 className="text-4xl md:text-3xl xl:text-4xl font-bold text-center text-[#6f4fee] mt-2">$4,587.58</h2>
           <p className="text-gray-400 text-sm text-center mt-1">10 Jan 2022 at 10:00 PM</p>
           <button className="mt-4 px-6 py-2 rounded-full bg-black text-white text-sm font-medium mx-auto block hover:bg-gray-800">Withdraw</button>
         </div>
 
-        {/* Stats Section */}
         <div className="flex justify-between items-center mt-6">
-          {/* Last Month Earnings */}
           <div className="flex items-center gap-2 md:gap-1 xl:gap-2">
             <div className="p-2 md:p-1 xl:p-2 bg-teal-50 rounded-full">
               <Wallet className="h-5 w-5 md:h-4 md:w-4 xl:h-5 xl:w-5 text-teal-500" />
@@ -90,7 +88,6 @@ export default function UserDetails() {
             </div>
           </div>
 
-          {/* Artwork Sold */}
           <div className="flex items-center gap-2 md:gap-1 xl:gap-2">
             <div className="p-2 md:p-1 xl:p-2 bg-yellow-50 rounded-full">
               <Lock className="h-5 w-5 md:h-4 md:w-4 xl:h-5 xl:w-5 text-yellow-500" />
@@ -126,7 +123,7 @@ export default function UserDetails() {
                 <p className="text-xs text-gray-500">design@darbert.com</p>
               </div>
             </div>
-            <button className="px-4 md:px-2 xl:px-4 py-1 text-xs font-medium text-white bg-purple-500 rounded-full hover:bg-purple-600">Follow</button>
+            <button className="px-4 md:px-2 xl:px-4 py-1 text-xs font-medium text-white bg-[#6f4fee] rounded-full hover:bg-[#6c4bf4]">Follow</button>
           </div>
 
           {/* Creator 2 */}
@@ -150,7 +147,7 @@ export default function UserDetails() {
                 <p className="text-xs text-gray-500">design@dricros.com</p>
               </div>
             </div>
-            <button className="px-4 md:px-2 xl:px-4 py-1 text-xs font-medium text-white bg-purple-500 rounded-full hover:bg-purple-600">Follow</button>
+            <button className="px-4 md:px-2 xl:px-4 py-1 text-xs font-medium text-white bg-[#6f4fee]  rounded-full hover:bg-[#6c4bf4]">Follow</button>
           </div>
         </div>
       </div>
