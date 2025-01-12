@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Skeleton } from "@/components/ui/skeleton";
 import { BASEURL } from "@/configs/constants";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Trending() {
   const [data, setData] = useState([]);
@@ -35,10 +35,8 @@ export default function Trending() {
   return (
     <div className="w-full flex flex-col p-5">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        {/* Trending Bids Header */}
         <h1 className="text-3xl font-bold mb-2 md:mb-3">Trending Bids</h1>
 
-        {/* Categories Section */}
         <div className="flex flex-wrap items-center gap-4 mb-4 md:mb-0">
           <button className={`text-gray-500 ${selectedCategory === "all" ? "font-bold" : ""}`} onClick={() => handleCategoryClick("all")}>
             All

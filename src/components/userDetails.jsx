@@ -1,6 +1,6 @@
-import { Settings, Bell, Wallet, Lock, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Settings, Bell, Wallet, Lock, ChevronRight } from "lucide-react";
 
 export default function UserDetails() {
   const historyItems = [
