@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/userContext";
 
 export function LoginForm() {
-  const { user, setUser, logout } = useUserContext();
+  const { setUser } = useUserContext();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
