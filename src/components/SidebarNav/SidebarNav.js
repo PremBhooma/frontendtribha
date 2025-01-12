@@ -1,36 +1,37 @@
 "use client";
 
 import React from "react";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
+import { Calendar, ChartSpline, Heart, Home, Inbox, LayoutDashboard, Search, Settings, SquarePlus, Wallet } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarProvider } from "@/components/ui/sidebar";
+import Link from "next/link";
+import Image from "next/image";
 
 // Menu items.
 const items = [
   {
-    title: "Home",
+    title: "Dashboard",
     url: "#",
-    icon: Home,
+    icon: LayoutDashboard,
   },
   {
-    title: "Inbox",
+    title: "Bids",
     url: "#",
-    icon: Inbox,
+    icon: ChartSpline,
   },
   {
-    title: "Calendar",
+    title: "Saved",
     url: "#",
-    icon: Calendar,
+    icon: Heart,
   },
   {
-    title: "Search",
+    title: "Creators",
     url: "#",
-    icon: Search,
+    icon: SquarePlus,
   },
   {
-    title: "Settings",
+    title: "Wallet",
     url: "#",
-    icon: Settings,
+    icon: Wallet,
   },
 ];
 
@@ -39,18 +40,21 @@ export default function SidebarNav({ children }) {
     <>
       <SidebarProvider>
         <Sidebar variant="inset">
-          {/* <SidebarHeader>
+          <SidebarHeader>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" asChild>
-                  <Logo />
+                <SidebarMenuButton size="lg" asChild className="h-14">
+                  <Link href="/" className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
+                    <div>
+                      <Image src="/images/logo.jpg" width={170} height={100} alt="logo" />
+                    </div>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
-          </SidebarHeader> */}
+          </SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
-              <SidebarGroupLabel>Application</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
                   {items.map((item) => (
