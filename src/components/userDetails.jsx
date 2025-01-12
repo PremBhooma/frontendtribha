@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useUserContext } from "@/context/userContext";
 import { Settings, Bell, Wallet, Lock, ChevronRight } from "lucide-react";
 
 export default function UserDetails() {
+  // const { user } = useUserContext();
+
   const historyItems = [
     {
       id: 1,
@@ -40,6 +43,7 @@ export default function UserDetails() {
       image: "/images/girl.avif",
     },
   ];
+
   return (
     <div className="flex flex-col gap-5">
       {/* ========================== User Details Start ========================== */}
