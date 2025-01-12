@@ -1,3 +1,19 @@
+import SidebarNav from "@/components/SidebarNav/SidebarNav";
+import { Separator } from "@/components/ui/separator";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+
 export default function Home() {
-  return <h1>Hello c</h1>;
+  return (
+    <>
+      <SidebarNav>
+        <header className="flex h-16 shrink-0 items-center gap-2">
+          <div className="flex items-center gap-2 px-4">
+            <SidebarTrigger className="-ml-1" />
+            <Separator orientation="vertical" className="mr-2 h-4" />
+          </div>
+        </header>
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{/* <div className="min-h-[100vh] flex-1 rounded-xl bg-foreground md:min-h-min" /> */}</div>
+      </SidebarNav>
+    </>
+  );
 }
