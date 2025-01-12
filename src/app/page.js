@@ -1,14 +1,14 @@
 "use client";
 
+import Trending from "@/components/trending";
+import Caricatures from "@/components/caricatures";
+import UserDetails from "@/components/userDetails";
+import SidebarNav from "@/components/SidebarNav/SidebarNav";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import SidebarNav from "@/components/SidebarNav/SidebarNav";
-import Caricatures from "@/components/caricatures";
-import Trending from "@/components/trending";
 import { Separator } from "@/components/ui/separator";
-import { SidebarTrigger } from "@/components/ui/sidebar";
-import UserDetails from "@/components/userDetails";
 import { useUserContext } from "@/context/userContext";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Home() {
   const { user } = useUserContext();
@@ -44,7 +44,9 @@ export default function Home() {
               <Separator orientation="vertical" className="mr-2 h-4" />
               <div>
                 <h1 className=" text-2xl font-bold text-[#333] m-0">Dashboard</h1>
-                <p className="text-sm lg:text-base text-[#666]">Hello Nila Vita, Welcome Back</p>
+                <p className="text-sm lg:text-base text-[#666]">
+                  Hello <span>{user?.name || "Nila Vita"}</span>, Welcome Back
+                </p>
               </div>
             </div>
             <input type="text" placeholder="Search" className="hidden md:block px-4 py-1 rounded-xl border border-gray-300 text-sm text-[#333] h-10" />
